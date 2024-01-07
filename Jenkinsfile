@@ -66,7 +66,7 @@ pipeline {
         stage("Trivy Image Scan") {
             steps {
                 script {
-	                sh ('docker run -v /var/run/docker.sock:/var/run/docker.sock bertt6/trivy image ashfaque9x/reddit-clone-pipeline:latest --no-progress --scanners vuln  --exit-code 0 --severity HIGH,CRITICAL --format table > trivyimage.txt')
+	                sh ('docker run -v /var/run/docker.sock:/var/run/docker.sock bertt6/trivy image bertt6/reddit-clone-pipeline:latest --no-progress --scanners vuln  --exit-code 0 --severity HIGH,CRITICAL --format table > trivyimage.txt')
                 }
             }
         }
